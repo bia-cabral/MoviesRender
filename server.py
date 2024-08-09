@@ -1,6 +1,5 @@
 import os
 import psycopg2
-from dotenv import load_dotenv
 from flask import Flask, render_template
 
 load_dotenv()
@@ -8,10 +7,10 @@ load_dotenv()
 app = Flask(__name__)
 
 def get_db_connection():
-    conn = psycopg2.connect(host=os.getenv('host'),
-                            database=os.getenv('database'),
-                            user=os.getenv('user'),
-                            password=os.getenv('password'))
+    conn = psycopg2.connect(host='dpg-cqr0i8ggph6c738garv0-a.oregon-postgres.render.com',
+                            database='movies_kx52',
+                            user='movies_kx52_user',
+                            password='vz8eekxxajU8aJB2YH0SNcvvbHg05D0D')
     return conn
 
 
